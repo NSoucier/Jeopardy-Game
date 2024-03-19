@@ -79,7 +79,7 @@ async function fillTable(ids) { // CONTINUE HERE: BUILD TABLE OF ?s ************
         };
         hideLoadingView();
     } catch (e) {
-        alert('Jeopardy categories failed to load from server')
+        alert('Jeopardy categories failed to load from server, please refresh page or try again later.')
     }    
 }
 
@@ -133,7 +133,7 @@ async function setupAndStart() {
         });
         fillTable(catIDs);
     } catch (e) {
-        alert('some error message')
+        alert('Jeopardy server failed to respond, please try again later.')
     } 
 }
 
@@ -141,7 +141,7 @@ async function setupAndStart() {
 const restart = document.querySelector('button');
 restart.addEventListener('click', (e) => {
     if (gameCount === 2) {
-        alert('Can only play game twice. Please refresh page if you want to play again with the same categories');
+        alert('Can only play game twice. Please refresh page if you want to play again with the same categories.');
     } else {
         showLoadingView();
         gameCount = 2;
